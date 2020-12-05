@@ -10,37 +10,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./GuGuDan.js":
-/*!********************!*\
-  !*** ./GuGuDan.js ***!
-  \********************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements: top-level-this-exports, __webpack_exports__, __webpack_require__ */
-/*! CommonJS bailout: this is used directly at 2:23-27 */
-/*! CommonJS bailout: this is used directly at 9:26-30 */
-/*! CommonJS bailout: this is used directly at 14:20-24 */
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nexports.__esModule = true;\nvar React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nvar GuGuDan = function () {\n    var _a = react_1.useState(Math.ceil(Math.random() * 9)), first = _a[0], setFirst = _a[1];\n    var _b = react_1.useState(Math.ceil(Math.random() * 9)), second = _b[0], setSecond = _b[1];\n    var _c = react_1.useState(''), value = _c[0], setValue = _c[1];\n    var _d = react_1.useState(''), result = _d[0], setResult = _d[1];\n    var inputEl = react_1.useRef(null);\n    var onSubmitForm = function (e) {\n        e.preventDefault();\n        var input = inputEl.current;\n        if (parseInt(value) === first * second) {\n            setResult('정답');\n            setFirst(Math.ceil(Math.random() * 9));\n            setSecond(Math.ceil(Math.random() * 9));\n            setValue('');\n            if (input) {\n                input.focus();\n            }\n        }\n        else {\n            setResult('땡');\n            setValue('');\n            if (input) {\n                input.focus();\n            }\n        }\n    };\n    return (React.createElement(React.Fragment, null,\n        React.createElement(\"div\", null,\n            first,\n            \" \\uACF1\\uD558\\uAE30 \",\n            second,\n            \"\\uB294?\"),\n        React.createElement(\"form\", { onSubmit: onSubmitForm },\n            React.createElement(\"input\", { ref: inputEl, type: \"number\", value: value, onChange: function (e) { return setValue(e.target.value); } }),\n            React.createElement(\"button\", null, \"\\uC785\\uB825!\")),\n        React.createElement(\"div\", { id: \"result\" }, result)));\n};\nexports.default = GuGuDan;\n\n\n//# sourceURL=webpack://gugudan/./GuGuDan.js?");
-
-/***/ }),
-
-/***/ "./client.js":
-/*!*******************!*\
-  !*** ./client.js ***!
-  \*******************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements: top-level-this-exports, __webpack_exports__, __webpack_require__ */
-/*! CommonJS bailout: this is used directly at 2:23-27 */
-/*! CommonJS bailout: this is used directly at 9:26-30 */
-/*! CommonJS bailout: this is used directly at 14:20-24 */
-/*! CommonJS bailout: this is used directly at 21:23-27 */
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nexports.__esModule = true;\nvar React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar ReactDOM = __importStar(__webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\"));\nvar GuGuDan_1 = __importDefault(__webpack_require__(/*! ./GuGuDan */ \"./GuGuDan.js\"));\nReactDOM.render(React.createElement(GuGuDan_1[\"default\"], null), document.querySelector('#root'));\n\n\n//# sourceURL=webpack://gugudan/./client.js?");
-
-/***/ }),
-
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -300,6 +269,38 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ \"./node_modules/scheduler/cjs/scheduler-tracing.development.js\");\n}\n\n\n//# sourceURL=webpack://gugudan/./node_modules/scheduler/tracing.js?");
 
+/***/ }),
+
+/***/ "./GuGuDanClass.tsx":
+/*!**************************!*\
+  !*** ./GuGuDanClass.tsx ***!
+  \**************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: top-level-this-exports, __webpack_exports__, __webpack_require__ */
+/*! CommonJS bailout: this is used directly at 2:17-21 */
+/*! CommonJS bailout: this is used directly at 15:23-27 */
+/*! CommonJS bailout: this is used directly at 22:26-30 */
+/*! CommonJS bailout: this is used directly at 27:20-24 */
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nexports.__esModule = true;\nvar React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nvar GuGuDanClass = /** @class */ (function (_super) {\n    __extends(GuGuDanClass, _super);\n    function GuGuDanClass() {\n        var _this = _super !== null && _super.apply(this, arguments) || this;\n        _this.state = {\n            first: Math.ceil(Math.random() * 9),\n            second: Math.ceil(Math.random() * 9),\n            value: '',\n            result: '',\n        };\n        _this.onSubmitForm = function (e) {\n            e.preventDefault();\n            var _a = _this.state, value = _a.value, first = _a.first, second = _a.second;\n            if (parseInt(value) === first * second) {\n                _this.setState(function (prevState) {\n                    return {\n                        result: '정답' + prevState.value,\n                        first: Math.ceil(Math.random() * 9),\n                        second: Math.ceil(Math.random() * 9),\n                        value: '',\n                    };\n                });\n                if (_this.input) {\n                    _this.input.focus();\n                }\n            }\n            else {\n                _this.setState({\n                    result: '땡',\n                    value: '',\n                });\n                if (_this.input) {\n                    _this.input.focus();\n                }\n            }\n        };\n        _this.onChange = function (e) {\n            _this.setState({ value: e.target.value });\n        };\n        _this.input = null;\n        _this.onRefInput = function (ref) { _this.input = ref; };\n        return _this;\n    }\n    GuGuDanClass.prototype.render = function () {\n        var _this = this;\n        var _a = this.state, value = _a.value, first = _a.first, second = _a.second, result = _a.result;\n        return (React.createElement(React.Fragment, null,\n            React.createElement(\"div\", null,\n                first,\n                \" \\uACF1\\uD558\\uAE30mm \",\n                second,\n                \"\\uB294?\"),\n            React.createElement(\"form\", { onSubmit: this.onSubmitForm },\n                React.createElement(\"input\", { ref: this.onRefInput, type: \"number\", value: value, onChange: function (e) { return _this.onChange(e); } }),\n                React.createElement(\"button\", null, \"\\uC785\\uB825!!!\")),\n            React.createElement(\"div\", { id: \"result\" }, result)));\n    };\n    return GuGuDanClass;\n}(react_1.Component));\nexports.default = GuGuDanClass;\n\n\n//# sourceURL=webpack://gugudan/./GuGuDanClass.tsx?");
+
+/***/ }),
+
+/***/ "./client.tsx":
+/*!********************!*\
+  !*** ./client.tsx ***!
+  \********************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: top-level-this-exports, __webpack_exports__, __webpack_require__ */
+/*! CommonJS bailout: this is used directly at 2:23-27 */
+/*! CommonJS bailout: this is used directly at 9:26-30 */
+/*! CommonJS bailout: this is used directly at 14:20-24 */
+/*! CommonJS bailout: this is used directly at 21:23-27 */
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nexports.__esModule = true;\nvar React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar ReactDOM = __importStar(__webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\"));\n// import GuGuDan from './GuGuDan';\nvar GuGuDanClass_1 = __importDefault(__webpack_require__(/*! ./GuGuDanClass */ \"./GuGuDanClass.tsx\"));\nReactDOM.render(React.createElement(GuGuDanClass_1[\"default\"], null), document.querySelector('#root'));\n\n\n//# sourceURL=webpack://gugudan/./client.tsx?");
+
 /***/ })
 
 /******/ 	});
@@ -331,6 +332,6 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /******/ 	// startup
 /******/ 	// Load entry module
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	__webpack_require__("./client.js");
+/******/ 	__webpack_require__("./client.tsx");
 /******/ })()
 ;
