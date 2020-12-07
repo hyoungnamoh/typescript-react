@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Try from './Try';
 import { useRef, useState } from 'react';
+import { TryInfo } from './types';
 
 const getNumbers = () => {
   const candidates = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -10,11 +11,6 @@ const getNumbers = () => {
     array.push(chosen);
   }
   return array
-}
-
-interface TryInfo {
-  try: string,
-  result: string,
 }
 
 const NumberBaseball = () => {
@@ -66,20 +62,22 @@ const NumberBaseball = () => {
             ball += 1;
           }
         }
-        setTries(t => ([
-          ...t,
-          {
-            try: value,
-            result: `${strike}스트라이크, ${ball}볼입니다.`,
-          }
-        ]));
+        setTries(t => {
+          console.log(t); return [
+            ...t,
+            {
+              try: value,
+              result: `${strike}스트라이크, ${ball}볼입니다.`,
+            }
+          ]
+        });
         setValue('');
         if (input) {
           input.focus();
         }
       }
     }
-  }, []);
+  }, [answer, result, value, tries]);
 
   const onChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -87,6 +85,16 @@ const NumberBaseball = () => {
   return (
     <>
       <h1>{result}</h1>
+      <form onSubmit={onSubmitForm}>
+        <input ref={inputEl} maxLength={4} value={value} onChange={onChange} />
+        <button>입력!</button>
+      </form>
+      <div>시도: {tries.length}</div>
+      <ul>
+        {tries.map((e, i) => (
+          <Try key={`${i + 1}차 시도: ${e.try}`} tryInfo={e} />
+        ))}
+      </ul>
     </>
   );
 };

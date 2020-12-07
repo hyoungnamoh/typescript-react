@@ -1,5 +1,4 @@
 import path from 'path';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { Configuration } from 'webpack';
 
 const config: Configuration = {
@@ -22,7 +21,7 @@ const config: Configuration = {
   output: {
     filename: 'app.js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/'
+    publicPath: '/dist/' //webpack-dev-server 사용하려면 넣어줘야함
   },
 };
 
