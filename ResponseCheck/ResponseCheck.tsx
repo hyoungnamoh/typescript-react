@@ -32,7 +32,7 @@ const ResponseCheck = () => {
         return [...prevResult, endTime.current - startTime.current];
       });
     }
-  }, [state, message result]);
+  }, [state, message, result]);
 
   const onReset = useCallback(() => {
     setResult([]);
