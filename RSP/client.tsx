@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader/root';
-import RSP from './RSP';
+import RSPClass from './RSPClass';
 
-const Hot = hot(RSP);
+const Hot = hot(RSPClass);
 ReactDOM.render(<Hot />, document.querySelector('#root'));
