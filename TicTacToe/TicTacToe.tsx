@@ -95,7 +95,7 @@ const reducer = (state: ReducerState, action: ReducerActions): ReducerState => {
 }
 
 const TicTacToe = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer<Reducer<ReducerState, ReducerActions>>(reducer, initialState);
   const { tableData, turn, winner, recentCell } = state;
 
   useEffect(() => {
@@ -142,6 +142,8 @@ const TicTacToe = () => {
   }, []);
   return (
     <>
+      <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
+      {winner && <div>{winner}님의 승리</div>}
     </>
   );
 }
