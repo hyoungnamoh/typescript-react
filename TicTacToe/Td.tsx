@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMemo, FC, Dispatch } from 'react';
-import { CLICK_CELL } from './TicTacToe';
+import { clickCell, CLICK_CELL } from './TicTacToe';
 
 interface Props {
   cellData: string;
@@ -15,7 +15,7 @@ const Td: FC<Props> = ({ rowIndex, dispatch, cellIndex, cellData  }) => {
     if(cellData) {
       return;
     }
-    dispatch({ type: CLICK_CELL, row: rowIndex, cell: cellIndex});
+    dispatch(clickCell(rowIndex, cellIndex));
   }, [cellData]);
   return (
     <td onClick={onClickTd}>{cellData}</td>

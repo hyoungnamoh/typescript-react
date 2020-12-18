@@ -29,7 +29,7 @@ export const RESET_GAME = 'RESET_GAME' as const;
 // Action 객체의 타입 
 interface SetWinnerAction {
   type: typeof SET_WINNER;
-  winner: 'O' | 'X',
+  winner: 'O' | 'X' | '',
 }
 
 interface ClickCellAction {
@@ -47,11 +47,11 @@ interface ResetGameAction {
 }
 
 // action creator
-const setWinner = (winner: 'O' | 'X'): SetWinnerAction => {
+const setWinner = (winner: 'O' | 'X' | ''): SetWinnerAction => {
   return { type: SET_WINNER, winner }
 }
 
-const clickCell = (row: number, cell: number): ClickCellAction => {
+export const clickCell = (row: number, cell: number): ClickCellAction => {
   return { type: CLICK_CELL, row, cell }
 }
 
@@ -118,7 +118,7 @@ const TicTacToe = () => {
       win = true;
     }
     if (win) {
-      dispatch({ type: SET_WINNER, winner: turn });
+      dispatch(setWinner(turn));
       dispatch({ type: RESET_GAME });
     } else {
       let all = true;
@@ -131,6 +131,7 @@ const TicTacToe = () => {
       });
       if (all) {
         dispatch({ type: RESET_GAME });
+        dispatch(setWinner(''))
       } else {
         dispatch({ type: CHANGE_TURN });
       }
@@ -142,6 +143,13 @@ const TicTacToe = () => {
   }, []);
   return (
     <>
+    {/*
+     얘네가 다 ReactNode, 모든걸 아우른게 ReactNode 
+      ReactText - <div>{'123'}<div>, <div>{true}</div>
+      ReactChild = ReactElement | ReactText - <Component props={} key={}></Component>;
+      JSX.IntirinsicElement - <tr>, <div>, <a>...
+      결국 여기서 리턴하는 타입은 RaectNode
+    */}
       <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
       {winner && <div>{winner}님의 승리</div>}
     </>
