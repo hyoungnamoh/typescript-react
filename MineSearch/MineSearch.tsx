@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useCallback, useMemo, useEffect, useReducer, Dispatch } from 'react';
+import { useState, useCallback, useMemo, useEffect, useReducer, Dispatch, createContext } from 'react';
 
 export const CODE = {
   MINE: -7,
@@ -11,6 +11,18 @@ export const CODE = {
   CLICKED_MINE: -6,
   OPENED: 0, // 주변 지뢰 갯수, 0 이상이면 모두 열려있는 상태
 } as const; // 값 자체도 바뀔일 없는 코드들 const로 고정
+
+interface Context {
+  tableData: number[][],
+  halted: boolean,
+  dispatch: Dispatch<ReducerActions>,
+}
+// 자식컴포넌트들한테 내려보내줄 데이터들
+export const TableContext = createContext<Context>({
+  tableData: [],
+  halted: true,
+  dispatch: () => { },
+});
 
 interface ReducerState {
   tableData: number[][],
@@ -240,15 +252,32 @@ const reducer = (state = initialState, action: ReducerActions): ReducerState => 
     default:
       return state;
   }
-    default:
-break;
-  }
 }
 
 const MineSearch = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { tableData, halted, timer, result } = state;
+  const value = useMemo(() => ({ tableData, halted, dispatch }), [tableData, halted]);
+
+  useEffect(() => {
+    let timer: number;
+    if (halted === false) {
+      timer = window.setInterval(() => {
+        dispatch({ type: INCREMENT_TIMER });
+      }, 1000);
+    }
+    return () => {
+      clearInterval(timer);
+    }
+  }, [halted]);
+  
   return (
-    <>
-    </>
+    <TableContext.Provider value={value}>
+      <Form />
+      <div>{timer}</div>
+      <Table />
+      <div>{result}</div>
+    </TableContext.Provider>
   )
 }
 
