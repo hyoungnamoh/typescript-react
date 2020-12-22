@@ -54,37 +54,37 @@ export const startGame = (row: number, cell: number, mine: number): StartGameAct
   }
 }
 
-export const openCell = (row: number, cell: number, mine: number): OpenCellAction => {
+export const openCell = (row: number, cell: number): OpenCellAction => {
   return {
     type: OPEN_CELL, row, cell
   }
 }
 
-export const clickMine = (row: number, cell: number, mine: number): ClickMineAction => {
+export const clickMine = (row: number, cell: number): ClickMineAction => {
   return {
     type: CLICK_MINE, row, cell
   }
 }
 
-export const flagMine = (row: number, cell: number, mine: number): FlagMineAction => {
+export const flagMine = (row: number, cell: number): FlagMineAction => {
   return {
     type: FLAG_CELL, row, cell
   }
 }
 
-export const questionCell = (row: number, cell: number, mine: number): QuestionCellAction => {
+export const questionCell = (row: number, cell: number): QuestionCellAction => {
   return {
     type: QUESTION_CELL, row, cell
   }
 }
 
-export const normalizeCell = (row: number, cell: number, mine: number): NormalizeCellAction => {
+export const normalizeCell = (row: number, cell: number): NormalizeCellAction => {
   return {
     type: NORMALIZE_CELL, row, cell
   }
 }
 
-export const incrementTimer = (row: number, cell: number, mine: number): IncrementTimerAction => {
+export const incrementTimer = (row: number, cell: number): IncrementTimerAction => {
   return {
     type: INCREMENT_TIMER
   }

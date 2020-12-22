@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useCallback, useMemo, useEffect, useReducer, Dispatch, createContext } from 'react';
 import Form from './Form';
 import { ReducerActions, incrementTimer, normalizeCell, questionCell, flagMine, clickMine, openCell, startGame, START_GAME, OPEN_CELL, CLICK_MINE, FLAG_CELL, QUESTION_CELL, NORMALIZE_CELL, INCREMENT_TIMER, } from './action';
+import Table from './Table';
 
 export type Codes = typeof CODE[keyof typeof CODE];
 export const CODE = {
