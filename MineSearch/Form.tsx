@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useCallback, useContext, memo } from 'react';
-import { START_GAME, TableContext } from './MineSearch';
+import { TableContext } from './MineSearch';
+import { START_GAME} from './action';
 
 
 const Form = () => {
