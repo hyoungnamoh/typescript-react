@@ -1,6 +1,6 @@
 import * as React from 'react';
 import RSP from '../RSP/RSP';
-import Lotto from '../Lotto/Lotto';
+import Lotto from '../Lotto/LottoClass';
 import ResponseCheck from '../ResponseCheck/ResponseCheck';
 import GuGuDan from '../GuGuDan/GuGuDan';
 import NumberBaseball from '../NumberBaseball/NumberBasball';

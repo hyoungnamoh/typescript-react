@@ -18,8 +18,8 @@ const ReactRouter = () => {
       </div>
       <div>
         <Switch>
-          <Route exact path="/" component={GameMatcher} />
-          <Route path="/game/:name" render={(props) => <GameMatcher {...props} />} /> {/* props => history, location, match 등... */}
+          <Route exact path="/" component={GameMatcher} /> {/* render or component */}
+          <Route path="/game/:name" render={(props) => <GameMatcher {...props} />} /> {/* props => history, location, match 등... *hooks 사용 시 props 안넣어줘도 됨* */}
         </Switch>
       </div>
     </BrowserRouter>
