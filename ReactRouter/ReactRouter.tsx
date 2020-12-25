@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {} from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import GameMatcher from './GameMatcher';
 // 타입 정해줄 때 자주 쓰이는 친구들 history, location, match, withroute
 // npm i react-router, react-router-dom, @types/react-router, @types/react-router-dom
 const ReactRouter = () => {
@@ -18,7 +19,7 @@ const ReactRouter = () => {
       <div>
         <Switch>
           <Route exact path="/" component={GameMatcher} />
-          <Route path="/game/:name" render={(props) => <GameMatcher {...props} />} />
+          <Route path="/game/:name" render={(props) => <GameMatcher {...props} />} /> {/* props => history, location, match 등... */}
         </Switch>
       </div>
     </BrowserRouter>
