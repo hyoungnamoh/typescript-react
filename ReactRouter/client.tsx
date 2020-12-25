@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader/root';
-import MineSearch from './ReactRouter';
+import ReactRouter from './ReactRouter';
 
-const Hot = hot(MineSearch);
+const Hot = hot(ReactRouter);
 ReactDOM.render(<Hot />, document.querySelector('#root'));
