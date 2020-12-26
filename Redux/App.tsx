@@ -1,10 +1,20 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import {logIn, logOut} from './actions/user';
+import { Dispatch } from 'redux';
+import { logIn, logOut } from './actions/user';
+import { RootState } from './reducers';
+import { UserState } from './reducers/user';
 
+interface StateToProps {
+  user: UserState, //mapStateProps
+}
 
-class App extends Component {
+interface DispatchToProps {
+  dispatchLogIn: ({ id, password }: { id: string, password: string }) => void, //mapDispatchToProps
+  dispatchLogOut: () => void,//mapDispatchToProps
+}
+class App extends Component<StateToProps & DispatchToProps> {
   onClick = () => {
     this.props.dispatchLogIn({
       id: 'hyoungnam',
@@ -30,14 +40,14 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: RootState) => ({ //redux state -> combinereducer
   user: state.user,
-  posts: state.posts,
+  // posts: state.posts,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  dispatchLogIn: (data: {id, password}) => dispatch(logIn(data)),
-  dispatchLogOut: () => dispatch(logOut());
+const mapDispatchToProps = (dispatch: Dispatch) => ({ //redux의 dispatch interface
+  dispatchLogIn: (data: { id: string, password: string }) => dispatch(logIn(data)),
+  dispatchLogOut: () => dispatch(logOut()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
